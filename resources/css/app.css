@@ -1,0 +1,58 @@
+@import 'tailwindcss';
+
+@source '../views/**/*.blade.php';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Plus Jakarta Sans', 'Outfit', system-ui, -apple-system, sans-serif;
+    --color-brand-50: #eff6ff;
+    --color-brand-100: #dbeafe;
+    --color-brand-200: #bfdbfe;
+    --color-brand-300: #93c5fd;
+    --color-brand-400: #60a5fa;
+    --color-brand-500: #3b82f6;
+    --color-brand-600: #2563eb;
+    --color-brand-700: #1d4ed8;
+    --color-fun-yellow: #fbbf24;
+    --color-fun-orange: #f97316;
+    --color-fun-purple: #8b5cf6;
+    --color-fun-teal: #14b8a6;
+    --color-fun-pink: #ec4899;
+}
+
+@layer utilities {
+    .glass-card {
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+
+    .hero-pattern {
+        background-color: #f8fafc;
+        background-image: radial-gradient(#6366f1 0.75px, transparent 0.75px), radial-gradient(#06b6d4 0.75px, #f8fafc 0.75px);
+        background-size: 30px 30px;
+        background-position: 0 0, 15px 15px;
+    }
+
+    .blob-shape {
+        border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    }
+}
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    .print-only {
+        display: block !important;
+    }
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 11pt;
+    }
+    .page-break {
+        page-break-after: always;
+    }
+}
