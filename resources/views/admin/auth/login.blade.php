@@ -70,7 +70,7 @@
                     <input type="email" 
                            id="email" 
                            name="email" 
-                           value="{{ old('email', 'admin@codingkids.id') }}" 
+                           value="{{ old('email') }}" 
                            required 
                            autocomplete="email"
                            placeholder="admin@codingkids.id"
@@ -88,10 +88,9 @@
                         <input :type="showPassword ? 'text' : 'password'" 
                                id="password" 
                                name="password" 
-                               value="admin123"
                                required 
                                autocomplete="current-password"
-                               placeholder="••••••••"
+                               placeholder="Masukkan kata sandi..."
                                class="w-full px-4 py-3.5 rounded-2xl bg-slate-900/80 border border-slate-700 text-white placeholder:text-slate-500 text-sm font-medium focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/30 transition-all pr-12">
                         
                         <button type="button" 
@@ -108,7 +107,6 @@
                         <input type="checkbox" name="remember" value="1" class="w-4 h-4 rounded bg-slate-900 border-slate-700 text-indigo-600 focus:ring-indigo-500">
                         <span>Ingat Saya</span>
                     </label>
-                    <span class="text-slate-500 text-[11px]">Akun Default: admin123</span>
                 </div>
 
                 <!-- Submit Button -->
