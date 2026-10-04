@@ -6,24 +6,25 @@
 <div class="overflow-hidden" x-data="dailyCountdown()">
 
     <!-- Sticky / Top Urgency Bar -->
-    <div class="bg-gradient-to-r from-red-600 via-rose-600 to-red-600 text-white py-2.5 px-4 shadow-sm relative z-20">
-        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs sm:text-sm font-bold">
-            <div class="flex items-center gap-2">
-                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-full bg-amber-400 text-red-950 font-black text-[11px] animate-pulse">
-                    🔥 KUOTA TERBATAS
+    <div class="bg-gradient-to-r from-red-600 via-rose-600 to-red-600 text-white py-2 px-3 sm:py-2.5 sm:px-4 shadow-sm relative z-20">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-2 text-xs sm:text-sm font-bold">
+            <!-- Quota Text & Badge -->
+            <div class="flex items-center justify-center gap-1.5 flex-wrap text-center">
+                <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-full bg-amber-400 text-red-950 font-black text-[10px] sm:text-[11px] animate-pulse shrink-0">
+                    🔥 SISA 10 KURSI
                 </span>
-                <span>Promo Hari Ini: Sisa <strong class="text-amber-300 underline font-black text-sm">10 Kursi Lagi</strong>!</span>
+                <span class="text-xs sm:text-sm">Promo Terbatas Hari Ini!</span>
             </div>
 
             <!-- Countdown Timer Header -->
-            <div class="flex items-center gap-2 font-mono">
-                <span class="text-rose-100 font-sans font-medium text-xs">Sisa Waktu Promo:</span>
+            <div class="flex items-center justify-center gap-1.5 font-mono text-xs">
+                <span class="text-rose-100 font-sans font-medium text-[11px] sm:text-xs">Sisa Waktu:</span>
                 <div class="flex items-center gap-1">
-                    <span class="bg-black/30 px-2 py-0.5 rounded-md text-amber-300 font-black text-xs sm:text-sm" x-text="hours">00</span>
-                    <span>:</span>
-                    <span class="bg-black/30 px-2 py-0.5 rounded-md text-amber-300 font-black text-xs sm:text-sm" x-text="minutes">00</span>
-                    <span>:</span>
-                    <span class="bg-black/30 px-2 py-0.5 rounded-md text-amber-300 font-black text-xs sm:text-sm" x-text="seconds">00</span>
+                    <span class="bg-black/35 px-1.5 py-0.5 rounded text-amber-300 font-black text-xs" x-text="hours">00</span>
+                    <span class="text-amber-200">:</span>
+                    <span class="bg-black/35 px-1.5 py-0.5 rounded text-amber-300 font-black text-xs" x-text="minutes">00</span>
+                    <span class="text-amber-200">:</span>
+                    <span class="bg-black/35 px-1.5 py-0.5 rounded text-amber-300 font-black text-xs" x-text="seconds">00</span>
                 </div>
             </div>
         </div>
@@ -76,29 +77,29 @@
 
     <!-- PROMO & PRICING BANNER DENGAN HITUNG MUNDUR & KUOTA TERSISA 10 -->
     <section class="max-w-4xl mx-auto px-4 sm:px-6 -mt-6 mb-10 relative z-10">
-        <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-rose-200 shadow-xl relative overflow-hidden">
+        <div class="bg-white rounded-3xl p-5 sm:p-8 border-2 border-rose-200 shadow-xl relative overflow-hidden">
             
             <!-- Quota & Timer Bar Inside Banner -->
-            <div class="mb-6 p-4 rounded-2xl bg-gradient-to-r from-amber-50 to-rose-50 border border-rose-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="mb-6 p-4 rounded-2xl bg-gradient-to-r from-amber-50 to-rose-50 border border-rose-200 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
                 
                 <!-- Sisa Kuota 10 -->
-                <div class="flex items-center gap-3">
+                <div class="flex items-center gap-3 w-full sm:w-auto">
                     <div class="w-10 h-10 rounded-xl bg-rose-600 text-white flex items-center justify-center text-xl shrink-0 shadow-sm animate-bounce">
                         🔥
                     </div>
-                    <div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-xs font-bold text-slate-700">Kuota Promo Hari Ini:</span>
-                            <span class="px-2.5 py-0.5 bg-rose-600 text-white font-black text-xs rounded-full">Sisa 10 Kursi</span>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <span class="text-xs font-bold text-slate-700">Kuota Hari Ini:</span>
+                            <span class="px-2 py-0.5 bg-rose-600 text-white font-black text-[11px] rounded-full">Sisa 10 Kursi</span>
                         </div>
-                        <div class="w-48 sm:w-56 bg-slate-200 h-2 rounded-full mt-1.5 overflow-hidden">
+                        <div class="w-full sm:w-48 bg-slate-200 h-2 rounded-full mt-1.5 overflow-hidden">
                             <div class="bg-gradient-to-r from-amber-400 to-rose-600 h-full rounded-full" style="width: 50%"></div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Live Daily Countdown Blocks -->
-                <div class="flex items-center justify-center sm:justify-end gap-1.5 font-mono text-slate-900">
+                <div class="flex items-center justify-center sm:justify-end gap-1.5 font-mono text-slate-900 shrink-0">
                     <div class="bg-slate-900 text-amber-300 font-black text-sm px-2.5 py-1 rounded-lg shadow-xs">
                         <span x-text="hours">00</span><span class="text-[9px] text-slate-400 block -mt-1 font-sans">Jam</span>
                     </div>
