@@ -96,7 +96,7 @@
     <!-- Footer -->
     <footer class="bg-slate-900 text-slate-300 pt-12 pb-8 border-t border-slate-800 mt-16">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <!-- Col 1 -->
                 <div class="md:col-span-2 space-y-4">
                     <div class="flex items-center gap-3">
@@ -125,29 +125,10 @@
                         <li><a href="{{ route('public.landing') }}#keunggulan" class="hover:text-indigo-400 transition-colors">🎯 Kurikulum &amp; Silabus</a></li>
                     </ul>
                 </div>
-
-                <!-- Col 3 -->
-                <div class="space-y-3">
-                    <h4 class="text-white font-bold text-sm tracking-wider uppercase">Bantuan &amp; Kontak</h4>
-                    <ul class="space-y-2 text-sm text-slate-400">
-                        <li class="flex items-center gap-2">
-                            <span>📞 WhatsApp:</span> <strong class="text-white">0812-3456-7890</strong>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span>✉️ Email:</span> <span class="text-white">halo@codingkids.id</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span>📍 Lokasi:</span> <span class="text-white">Jakarta, Indonesia</span>
-                        </li>
-                    </ul>
-                </div>
             </div>
 
             <div class="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
                 <p>&copy; {{ date('Y') }} CodingKids Indonesia. Hak Cipta Dilindungi.</p>
-                <div class="flex items-center gap-4">
-                    <a href="{{ route('admin.login') }}" class="text-slate-400 hover:text-white transition-colors">Akses Administrator</a>
-                </div>
             </div>
         </div>
     </footer>
