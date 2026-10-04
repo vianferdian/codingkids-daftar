@@ -26,41 +26,97 @@
 <body class="bg-gradient-to-br from-indigo-50/70 via-sky-50/50 to-amber-50/60 min-h-screen flex flex-col text-slate-800 antialiased selection:bg-indigo-500 selection:text-white">
 
     <!-- Navbar -->
-    <header class="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-indigo-100/70 shadow-xs">
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-indigo-100/70 shadow-xs" x-data="{ mobileMenuOpen: false }">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
+            <div class="flex items-center justify-between h-16 sm:h-20">
                 <!-- Logo -->
-                <a href="{{ route('public.landing') }}" class="flex items-center gap-3 group">
-                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 via-blue-500 to-amber-400 p-0.5 shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform duration-300">
-                        <div class="w-full h-full bg-white rounded-[14px] flex items-center justify-center">
-                            <span class="text-2xl font-black bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent font-display">🚀</span>
+                <a href="{{ route('public.landing') }}" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+                    <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-indigo-600 via-blue-500 to-amber-400 p-0.5 shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform duration-300">
+                        <div class="w-full h-full bg-white rounded-[10px] sm:rounded-[14px] flex items-center justify-center">
+                            <span class="text-lg sm:text-2xl font-black bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent font-display">🚀</span>
                         </div>
                     </div>
                     <div>
                         <div class="flex items-center gap-1.5">
-                            <span class="text-2xl font-bold tracking-tight text-slate-900 font-display">Coding<span class="text-indigo-600">Kids</span></span>
-                            <span class="px-2 py-0.5 text-xs font-bold bg-amber-100 text-amber-800 rounded-full border border-amber-200">SD &amp; SMP</span>
+                            <span class="text-lg sm:text-2xl font-bold tracking-tight text-slate-900 font-display leading-tight">Coding<span class="text-indigo-600">Kids</span></span>
+                            <span class="px-1.5 py-0.5 text-[10px] sm:text-xs font-bold bg-amber-100 text-amber-800 rounded-full border border-amber-200">SD &amp; SMP</span>
                         </div>
-                        <p class="text-xs text-slate-700 font-medium">Platform Pendaftaran Coding Anak</p>
+                        <p class="hidden sm:block text-xs text-slate-500 font-medium -mt-0.5">Platform Pendaftaran Coding Anak</p>
                     </div>
                 </a>
 
-                <!-- Nav Links -->
+                <!-- Nav Links Desktop -->
                 <nav class="hidden md:flex items-center gap-6">
                     <a href="{{ route('public.landing') }}#kategori" class="text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">Pilihan Kategori</a>
                     <a href="{{ route('public.landing') }}#keunggulan" class="text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">Mengapa CodingKids?</a>
                     <a href="{{ route('public.landing') }}#faq" class="text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">Tanya Jawab</a>
                 </nav>
 
-                <!-- Actions -->
-                <div class="flex items-center gap-3">
-                    <a href="{{ route('public.landing') }}#kategori" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white font-bold text-sm rounded-xl shadow-md shadow-indigo-600/25 hover:shadow-lg hover:shadow-indigo-600/35 hover:-translate-y-0.5 transition-all">
+                <!-- Actions & Mobile Hamburger -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <a href="{{ route('public.landing') }}#kategori" class="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-2 sm:px-5 sm:py-2.5 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white font-bold text-xs sm:text-sm rounded-xl shadow-md shadow-indigo-600/25 hover:shadow-lg hover:shadow-indigo-600/35 hover:-translate-y-0.5 transition-all">
                         <span>Daftar Sekarang</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
                     </a>
+
+                    <!-- Mobile Hamburger Button -->
+                    <button type="button" 
+                            @click="mobileMenuOpen = !mobileMenuOpen"
+                            class="md:hidden inline-flex items-center justify-center p-2 rounded-xl text-slate-700 hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none transition-colors"
+                            aria-label="Buka Menu Navigasi">
+                        <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                        <svg x-show="mobileMenuOpen" x-cloak class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
                 </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div x-show="mobileMenuOpen" 
+             x-cloak
+             x-transition:enter="transition ease-out duration-200"
+             x-transition:enter-start="opacity-0 -translate-y-2"
+             x-transition:enter-end="opacity-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-150"
+             x-transition:leave-start="opacity-100 translate-y-0"
+             x-transition:leave-end="opacity-0 -translate-y-2"
+             @click.away="mobileMenuOpen = false"
+             class="md:hidden bg-white/95 backdrop-blur-md border-b border-indigo-100 px-4 pt-3 pb-5 space-y-3 shadow-lg">
+            <div class="flex flex-col space-y-2">
+                <a href="{{ route('public.landing') }}#kategori" 
+                   @click="mobileMenuOpen = false"
+                   class="px-3 py-2.5 rounded-xl text-sm font-bold text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors">
+                    🎯 Pilihan Kategori Kelas
+                </a>
+                <a href="{{ route('public.landing') }}#keunggulan" 
+                   @click="mobileMenuOpen = false"
+                   class="px-3 py-2.5 rounded-xl text-sm font-bold text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors">
+                    ⭐ Mengapa CodingKids?
+                </a>
+                <a href="{{ route('public.landing') }}#faq" 
+                   @click="mobileMenuOpen = false"
+                   class="px-3 py-2.5 rounded-xl text-sm font-bold text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors">
+                    ❓ Tanya Jawab (FAQ)
+                </a>
+            </div>
+
+            <div class="pt-2 border-t border-slate-100 grid grid-cols-2 gap-2">
+                <a href="{{ route('public.register', 'sd') }}" 
+                   @click="mobileMenuOpen = false"
+                   class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 font-bold text-xs text-center hover:bg-amber-100 transition-colors">
+                    <span>🎮 Kelas SD</span>
+                </a>
+                <a href="{{ route('public.register', 'smp') }}" 
+                   @click="mobileMenuOpen = false"
+                   class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-sky-50 border border-sky-200 text-sky-900 font-bold text-xs text-center hover:bg-sky-100 transition-colors">
+                    <span>🏰 Kelas SMP</span>
+                </a>
             </div>
         </div>
     </header>
